@@ -10,12 +10,12 @@ const NavBar = ({ user, handleLogout }) => {
     <div className="justify-around bg-gray-900/90
     backdrop-blur-md shadow-md w-full
     fixed bottom-0 left-0 right-0 z-10">
-      <nav className=' text-gray-200 rounded-t'>
+      <nav className='text-gray-200 rounded-t'>
         {user ?
           <ul className='flex p-1 text-xs'>
 
             <li className='flex-1'>
-              <div className='text-center'>
+              <div className='text-center hover:text-amber-600'>
                 <FitnessCenterSharpIcon />
                 <br />
                 <p>Exercises</p>
@@ -23,7 +23,7 @@ const NavBar = ({ user, handleLogout }) => {
             </li>
 
             <li className='flex-1'>
-              <div className='text-center'>
+              <div className='text-center hover:text-amber-600'>
                 <SportsGymnasticsIcon/>
                 <br />
                 <p>Workouts</p>
@@ -31,7 +31,7 @@ const NavBar = ({ user, handleLogout }) => {
             </li>
 
             <li className='flex-1'>
-              <div className='text-center'>
+              <div className='text-center hover:text-amber-600'>
                 <EventRepeatIcon />
                 <br />
                 <p>Routines</p>
@@ -39,7 +39,7 @@ const NavBar = ({ user, handleLogout }) => {
             </li>
 
             <li className='flex-1'>
-              <div className='text-center'>
+              <div className='text-center hover:text-amber-600'>
                 <Link to="/profiles">
                   <AccountBoxIcon />
                   <br />
