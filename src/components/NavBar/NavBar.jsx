@@ -7,54 +7,59 @@ import QueryStatsIcon from '@mui/icons-material/QueryStats';
 
 const NavBar = ({ user, handleLogout }) => {
   return (
-    <nav className='bg-gray-800 text-gray-200'>
-      {user ?
-        <ul className='flex p-1 text-xs'>
+    <div className="justify-around bg-gray-900/90
+    backdrop-blur-md shadow-md w-full
+    fixed bottom-0 left-0 right-0 z-10">
+      <nav className=' text-gray-200 rounded-t'>
+        {user ?
+          <ul className='flex p-1 text-xs'>
 
-          <li className='flex-1'>
-            <div className='text-center'>
-              <FitnessCenterSharpIcon />
-              <br />
-              <p>Exercises</p>
-            </div>
-          </li>
-
-          <li className='flex-1'>
-            <div className='text-center'>
-              <SportsGymnasticsIcon/>
-              <br />
-              <p>Workouts</p>
-            </div>
-          </li>
-
-          <li className='flex-1'>
-            <div className='text-center'>
-              <EventRepeatIcon />
-              <br />
-              <p>Routines</p>
-            </div>
-          </li>
-
-          <li className='flex-1'>
-            <Link to="/profiles">
+            <li className='flex-1'>
               <div className='text-center'>
-                <AccountBoxIcon />
+                <FitnessCenterSharpIcon />
                 <br />
-                <p>Profile</p>
+                <p>Exercises</p>
               </div>
-            </Link></li>
+            </li>
 
-        </ul>
-      :
-        <ul>
-          <li>Exercises</li>
-          <li>Workouts</li>
-          <li>Routines</li>
-          <li><Link to="/login">Log In</Link></li>
-          <li><Link to="/signup">Sign Up</Link></li>
-        </ul>
-      }
-    </nav>
+            <li className='flex-1'>
+              <div className='text-center'>
+                <SportsGymnasticsIcon/>
+                <br />
+                <p>Workouts</p>
+              </div>
+            </li>
+
+            <li className='flex-1'>
+              <div className='text-center'>
+                <EventRepeatIcon />
+                <br />
+                <p>Routines</p>
+              </div>
+            </li>
+
+            <li className='flex-1'>
+              <div className='text-center'>
+                <Link to="/profiles">
+                  <AccountBoxIcon />
+                  <br />
+                  <p>Profile</p>
+                </Link>
+              </div>
+            </li>
+
+          </ul>
+        :
+          <ul>
+            <li>Exercises</li>
+            <li>Workouts</li>
+            <li>Routines</li>
+            <li><Link to="/login">Log In</Link></li>
+            <li><Link to="/signup">Sign Up</Link></li>
+          </ul>
+        }
+      </nav>
+    </div>
   )
 }
 
