@@ -1,6 +1,4 @@
-import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import * as profileService from '../../services/profileService'
 
 const Profile = ({user, handleLogout}) => {
 
