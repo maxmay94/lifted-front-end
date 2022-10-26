@@ -6,7 +6,7 @@ import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
-import Profiles from './pages/Profiles/Profiles'
+import Profile from './pages/Profiles/Profile'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 
 // components
@@ -24,6 +24,7 @@ const App = () => {
   const navigate = useNavigate()
 
   const handleLogout = () => {
+    console.log("LOGGING OUT")
     authService.logout()
     setUser(null)
     navigate('/')
@@ -47,10 +48,10 @@ const App = () => {
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
         />
         <Route
-          path="/profiles"
+          path="/profile"
           element={
             <ProtectedRoute user={user}>
-              <Profiles />
+              <Profile user={user} handleLogout={handleLogout}/>
             </ProtectedRoute>
           }
         />

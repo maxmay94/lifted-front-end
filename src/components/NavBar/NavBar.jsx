@@ -40,20 +40,41 @@ const NavBar = ({ user, handleLogout }) => {
 
             <li className='flex-1'>
               <div className='text-center hover:text-amber-600'>
-                <Link to="/profiles">
+                <Link to="/profile">
                   <AccountBoxIcon />
                   <br />
                   <p>Profile</p>
                 </Link>
               </div>
             </li>
-
+            
           </ul>
         :
-          <ul>
-            <li>Exercises</li>
-            <li>Workouts</li>
-            <li>Routines</li>
+          <ul className='flex p-1 text-xs'>
+            <li className='flex-1'>
+              <div className='text-center hover:text-amber-600'>
+                <FitnessCenterSharpIcon />
+                <br />
+                <p>Exercises</p>
+              </div>
+            </li>
+
+            <li className='flex-1'>
+              <div className='text-center hover:text-amber-600'>
+                <SportsGymnasticsIcon/>
+                <br />
+                <p>Workouts</p>
+              </div>
+            </li>
+
+            <li className='flex-1'>
+              <div className='text-center hover:text-amber-600'>
+                <EventRepeatIcon />
+                <br />
+                <p>Routines</p>
+              </div>
+            </li>
+
             <li><Link to="/login">Log In</Link></li>
             <li><Link to="/signup">Sign Up</Link></li>
           </ul>
