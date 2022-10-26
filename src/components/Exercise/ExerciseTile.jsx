@@ -1,6 +1,6 @@
 const ExerciseTile = ({exercise}) => {
   return (
-    <div className="text-center m-2 p-1 bg-gradient-to-b from-gray-800 to-slate-700 rounded-xl h-full pt-2">
+    <div className="text-center m-2 p-1 bg-gradient-to-b from-gray-800 to-slate-700 rounded-xl h-full pt-2 drop-shadow-md">
       <button className="h-full w-full">
         <div className=" pt-1 px-2">
           <img className="h-1/4 max-h-32 mx-auto rounded-xl" 

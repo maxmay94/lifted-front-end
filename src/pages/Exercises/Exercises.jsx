@@ -52,10 +52,10 @@ const Exercises = () => {
                 ))
               }
               <br />
-              <br />
             </div>
           ))
         }
+        <br />
       </div>
     </div>
   )
