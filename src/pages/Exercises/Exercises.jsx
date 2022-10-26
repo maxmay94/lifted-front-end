@@ -5,7 +5,7 @@ import ExerciseTile from '../../components/Exercise/ExerciseTile'
 const Exercises = () => {
   const [exercises, setExercises] = useState([])
   const [muscles, setMuscles] = useState([])
-  const [muscleSelected, setMuscleSelected] = useState("All")
+  const [muscleSelected, setMuscleSelected] = useState("all")
 
   useEffect(() => {
     const fetchExercises = async() => {
@@ -31,19 +31,19 @@ const Exercises = () => {
       <div className='grid text-center'>
         {
           muscles &&
-          <div className='w-3/4 mx-auto m-5 text-black'>
+          <div className='w-full mx-auto m-5 text-black'>
             <select 
               name="muscleSelect" 
               id="type-input"
               value={muscleSelected}
               onChange={handleChange}
-              className="rounded"
+              className="rounded w-3/4 h-8 text-center"
             >
-              <option value="All" defaultValue={true}>All Muscle Groups</option>
+              <option value="all" defaultValue={true}>All Muscle Groups</option>
               {
                 muscles&&
                 muscles.map((muscle, i) => (
-                  <option key={i} value={muscle}>{muscle}</option>
+                  <option key={i} value={muscle}>{muscle.charAt(0).toUpperCase() + muscle.slice(1)}</option>
                 ))
               }
             </select>
@@ -54,7 +54,7 @@ const Exercises = () => {
           exercises.map(exercise => (
             <div key={exercise._id} className="">
               {
-                muscleSelected === "All" ?
+                muscleSelected === "all" ?
                 <div className='w-3/4 mx-auto'>
                   <ExerciseTile exercise={exercise} />
                 </div>
