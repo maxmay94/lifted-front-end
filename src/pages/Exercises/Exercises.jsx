@@ -14,12 +14,17 @@ const Exercises = () => {
   }, [])
 
   return (
-    <div className='bg-gradient-to-b from-gray-900 to-slate-800 text-slate-200'>
-      {exercises &&
-        exercises.map(exercise => (
-          <ExerciseTile exercise={exercise} />
-        ))
-      }
+    <div className='bg-gradient-to-b from-gray-900 to-slate-800 text-slate-200 h-screen'>
+      <h1 className='text-center text-2xl py-4'>Exercises</h1>
+      <div className='grid gap-y-2 grid-cols-2'>
+        {exercises &&
+          exercises.map(exercise => (
+            <div key={exercise._id}>
+              <ExerciseTile exercise={exercise} />
+            </div>
+          ))
+        }
+      </div>
     </div>
   )
 }
