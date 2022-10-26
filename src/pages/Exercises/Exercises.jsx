@@ -9,14 +9,13 @@ const Exercises = () => {
   useEffect(() => {
     const fetchExercises = async() => {
       const exerciseData = await exerciseService.getAllExercises()
-      let temp = []
-      await exerciseData.forEach(exercise => {
+      let muscleSet = new Set()
+      exerciseData.forEach(exercise => {
         exercise.muscle.forEach(muscle => {
-          temp.push(muscle)
+          if(!muscleSet.has(muscle))muscleSet.add(muscle)
         })
       })
-      let uniqueMuscles = [...new Set(temp)]
-      setMuscles(uniqueMuscles)
+      setMuscles([...new Set(muscleSet)])
       setExercises(exerciseData)
     }
     fetchExercises()
