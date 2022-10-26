@@ -15,9 +15,11 @@ const NavBar = ({ user }) => {
 
             <li className='flex-1'>
               <div className='text-center hover:text-amber-600'>
-                <FitnessCenterSharpIcon />
-                <br />
-                <p>Exercises</p>
+                <Link to="/exercises">
+                  <FitnessCenterSharpIcon />
+                  <br />
+                  <p>Exercises</p>
+                </Link>
               </div>
             </li>
 
@@ -52,9 +54,11 @@ const NavBar = ({ user }) => {
           <ul className='flex p-1 text-xs'>
             <li className='flex-1'>
               <div className='text-center hover:text-amber-600'>
-                <FitnessCenterSharpIcon />
-                <br />
-                <p>Exercises</p>
+                <Link to="/exercises">
+                  <FitnessCenterSharpIcon />
+                  <br />
+                  <p>Exercises</p>
+                </Link>
               </div>
             </li>
 
