@@ -61,7 +61,7 @@ const Exercises = ({handleSetExercise}) => {
                 :
                 exercise.muscle.includes(muscleSelected) &&
                 <div className='w-3/4 mx-auto'>
-                  <ExerciseTile exercise={exercise} />
+                  <ExerciseTile exercise={exercise} handleSetExercise={handleSetExercise}/>
                 </div>
               }
             <br />
