@@ -27,8 +27,8 @@ const Exercises = () => {
   }
 
   return (
-    <div className='bg-gradient-to-b from-gray-900 to-slate-800 text-slate-200 h-full'>
-      <div className='grid text-center'>
+    <div className=''>
+      <div className='grid text-center '>
         {
           muscles &&
           <div className='w-full mx-auto m-5 text-black'>
@@ -52,7 +52,7 @@ const Exercises = () => {
         {
           exercises &&
           exercises.map(exercise => (
-            <div key={exercise._id} className="">
+            <div key={exercise._id} className=" ">
               {
                 muscleSelected === "all" ?
                 <div className='w-3/4 mx-auto'>

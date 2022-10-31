@@ -36,7 +36,7 @@ const App = () => {
   }
 
   return (
-    <>
+    <div className='bg-gradient-to-b from-gray-900 to-slate-800 text-slate-200 h-screen overflow-y-scroll'>
       <NavBar user={user} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
@@ -71,7 +71,7 @@ const App = () => {
           }
         />
       </Routes>
-    </>
+    </div>
   )
 }
 
