@@ -9,6 +9,7 @@ import Landing from './pages/Landing/Landing'
 import Profile from './pages/Profiles/Profile'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Exercises from './pages/Exercises/Exercises'
+import ExerciseDetails from './pages/ExerciseDetails/ExerciseDetails'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -16,12 +17,14 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as exerciseService from './services/exerciseService'
 
 // styles
 import './App.css'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
+  const [exercise, setExercise] = useState({})
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -33,6 +36,11 @@ const App = () => {
 
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
+  }
+
+  const handleSetExercise = async(exerciseId) => {
+    const currentExercise = await exerciseService.showExercise(exerciseId)
+    setExercise(currentExercise)
   }
 
   return (
@@ -67,7 +75,13 @@ const App = () => {
         <Route 
           path='/exercises'
           element={
-            <Exercises />
+            <Exercises handleSetExercise={handleSetExercise} />
+          }
+        />
+        <Route 
+          path='/exercise/:id'
+          element={
+            <ExerciseDetails exercise={exercise} />
           }
         />
       </Routes>

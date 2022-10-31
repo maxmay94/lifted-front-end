@@ -12,6 +12,16 @@ export const getAllExercises = async() => {
   }
 }
 
+export const showExercise = async(exerciseId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${exerciseId}`)
+    const data = await res.json()
+    return data
+  } catch(err) {
+    throw err
+  }
+}
+
 export const createExercise = async(exercise) => {
   try {
     const res = await fetch(BASE_URL, {
