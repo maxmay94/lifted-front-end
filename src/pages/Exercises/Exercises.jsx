@@ -37,7 +37,7 @@ const Exercises = ({handleSetExercise}) => {
               id="type-input"
               value={muscleSelected}
               onChange={handleChange}
-              className="rounded w-3/4 h-8 text-center"
+              className="rounded w-3/4 h-8 text-center bg-slate-700 text-slate-200"
             >
               <option value="all" defaultValue={true}>All Muscle Groups</option>
               {

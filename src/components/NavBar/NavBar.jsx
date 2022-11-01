@@ -25,9 +25,11 @@ const NavBar = ({ user }) => {
 
             <li className='flex-1'>
               <div className='text-center hover:text-amber-600'>
-                <SportsGymnasticsIcon/>
-                <br />
-                <p>Workouts</p>
+                <Link to="/workouts" >
+                  <SportsGymnasticsIcon/>
+                  <br />
+                  <p>Workouts</p>
+                </Link>
               </div>
             </li>
 

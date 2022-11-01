@@ -10,6 +10,7 @@ import Profile from './pages/Profiles/Profile'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Exercises from './pages/Exercises/Exercises'
 import ExerciseDetails from './pages/ExerciseDetails/ExerciseDetails'
+import Workouts from './pages/Workouts/Workouts'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -76,6 +77,12 @@ const App = () => {
           path='/exercises'
           element={
             <Exercises handleSetExercise={handleSetExercise} />
+          }
+        />
+        <Route 
+          path='/workouts'
+          element={
+            <Workouts />
           }
         />
         <Route 
