@@ -1,4 +1,6 @@
-const Workouts = ({ workouts }) => {
+import { Link } from 'react-router-dom'
+
+const Workouts = ({ workouts, exercise, handleSetExercise }) => {
   console.log(workouts)
   return (
     <div>
@@ -15,9 +17,13 @@ const Workouts = ({ workouts }) => {
                   workouts[key].exercises &&
                   workouts[key].exercises.map((exercise, j) => (
                     <div key={j} className="text-center mx-3 grid grid-cols-2 py-2 text-sm divide-x divide-dashed">
-                      <div className=" text-amber-500">
-                        {exercise.name}
-                      </div>
+                      <Link to={`/exercise/${exercise._id}`} className="h-full w-full">
+                        <button onClick={() => handleSetExercise(exercise._id)}>
+                          <div className=" text-amber-500">
+                            {exercise.name}
+                          </div>
+                        </button>
+                      </Link>
                       <div className="">
                         {workouts[key].setsReps[j]}
                       </div>

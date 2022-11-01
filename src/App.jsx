@@ -95,7 +95,7 @@ const App = () => {
         <Route 
           path='/workouts'
           element={
-            <Workouts workouts={workouts} />
+            <Workouts workouts={workouts} exercise={exercise} handleSetExercise={handleSetExercise} />
           }
         />
         <Route 
