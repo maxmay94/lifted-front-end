@@ -19,13 +19,16 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 // services
 import * as authService from './services/authService'
 import * as exerciseService from './services/exerciseService'
+import * as workoutService from './services/workoutService'
 
 // styles
 import './App.css'
+import { useEffect } from 'react'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [exercise, setExercise] = useState({})
+  const [workouts, setWorkouts] = useState({})
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -39,10 +42,20 @@ const App = () => {
     setUser(authService.getUser())
   }
 
+  
   const handleSetExercise = async(exerciseId) => {
     const currentExercise = await exerciseService.showExercise(exerciseId)
     setExercise(currentExercise)
   }
+  
+  useEffect(() => {
+    const fetchWorkouts = async() => {
+      let workoutData = await workoutService.getAllWorkouts()
+      setWorkouts(workoutData)
+    }
+    fetchWorkouts()
+  }, [])
+
 
   return (
     <div className='bg-gradient-to-b from-gray-900 to-slate-800 text-slate-200 h-screen overflow-y-scroll'>
@@ -82,7 +95,7 @@ const App = () => {
         <Route 
           path='/workouts'
           element={
-            <Workouts />
+            <Workouts workouts={workouts} />
           }
         />
         <Route 
