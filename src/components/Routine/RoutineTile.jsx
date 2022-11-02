@@ -1,6 +1,6 @@
 const RoutineTile = ({routine}) => {
   return (
-    <div className="text-center m-2 p-1 bg-gradient-to-b from-gray-800 to-slate-700 rounded-xl h-full pt-2 drop-shadow-md">
+    <div className="text-center m-5 p-2 bg-gradient-to-b from-gray-800 to-slate-700 rounded-xl h-full pt-2 drop-shadow-md">
       <h1 className="text-xl underline"> {routine.name} </h1>
       <p className="text-xs m-5">{routine.description}</p>
       <div className="divide-y divide-slate-800 px-2 pb-2">
@@ -11,12 +11,10 @@ const RoutineTile = ({routine}) => {
               <div className="col-span-1">Day {i+1} </div>
               <div className="col-span-3 text-amber-500">{workout.name}</div>
             </div>
-
           </div>
         ))
       }
-
-      </div>
+      </div> 
     </div>
   )
 }
