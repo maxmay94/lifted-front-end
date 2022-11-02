@@ -31,6 +31,7 @@ const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [exercise, setExercise] = useState({})
   const [workouts, setWorkouts] = useState({})
+  const [routines, setRoutines] = useState({})
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -51,11 +52,13 @@ const App = () => {
   }
   
   useEffect(() => {
-    const fetchWorkouts = async() => {
+    const fetchWorkoutsAndRoutines = async() => {
       let workoutData = await workoutService.getAllWorkouts()
       setWorkouts(workoutData)
+      let routineData = await routineService.getAllRoutines()
+      setRoutines(routineData)
     }
-    fetchWorkouts()
+    fetchWorkoutsAndRoutines()
   }, [])
 
 
@@ -109,7 +112,7 @@ const App = () => {
         <Route 
           path='/routines'
           element={
-            <Routines />
+            <Routines routines={routines}/>
           }
         />
       </Routes>

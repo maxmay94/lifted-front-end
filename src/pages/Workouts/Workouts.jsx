@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 
 const Workouts = ({ workouts, exercise, handleSetExercise }) => {
-  console.log(workouts)
   return (
     <div>
       <div className="sticky top-0 z-30 text-center text-2xl bg-gray-900/90 backdrop-blur-md shadow-md h-full " >
