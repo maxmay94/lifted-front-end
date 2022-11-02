@@ -119,7 +119,7 @@ const App = () => {
         <Route 
           path='/routines'
           element={
-            <Routines routines={routines} workout={workout} handleSetWorkout={handleSetWorkout}/>
+            <Routines routines={routines} workout={workout} handleSetExercise={handleSetExercise} handleSetWorkout={handleSetWorkout}/>
           }
         />
         <Route 

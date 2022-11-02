@@ -13,7 +13,6 @@ export const getAllWorkouts = async() => {
 }
 
 export const showWorkout = async(workoutId) => {
-  console.log(workoutId)
   try {
     const res = await fetch(`${BASE_URL}/${workoutId}`)
     const data = await res.json()
