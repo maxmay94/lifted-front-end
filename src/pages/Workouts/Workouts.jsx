@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import WorkoutTile from '../../components/WorkoutTile/WorkoutTile'
 
 const Workouts = ({ workouts, exercise, handleSetExercise }) => {
