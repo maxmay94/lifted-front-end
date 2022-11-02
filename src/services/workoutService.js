@@ -11,3 +11,14 @@ export const getAllWorkouts = async() => {
     throw err
   }
 }
+
+export const showWorkout = async(workoutId) => {
+  console.log(workoutId)
+  try {
+    const res = await fetch(`${BASE_URL}/${workoutId}`)
+    const data = await res.json()
+    return data
+  } catch(err) {
+    throw err
+  }
+}

@@ -12,6 +12,7 @@ import Exercises from './pages/Exercises/Exercises'
 import ExerciseDetails from './pages/ExerciseDetails/ExerciseDetails'
 import Workouts from './pages/Workouts/Workouts'
 import Routines from './pages/Routines/Routines'
+import WorkoutDetails from './pages/WorkoutDetails/WorkoutDetails'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -31,6 +32,7 @@ const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [exercise, setExercise] = useState({})
   const [workouts, setWorkouts] = useState({})
+  const [workout, setWorkout] = useState({})
   const [routines, setRoutines] = useState({})
   const navigate = useNavigate()
 
@@ -49,6 +51,11 @@ const App = () => {
   const handleSetExercise = async(exerciseId) => {
     const currentExercise = await exerciseService.showExercise(exerciseId)
     setExercise(currentExercise)
+  }
+
+  const handleSetWorkout = async(workoutId) => {
+    const currentWorkout = await workoutService.showWorkout(workoutId)
+    setWorkout(currentWorkout)
   }
   
   useEffect(() => {
@@ -112,7 +119,13 @@ const App = () => {
         <Route 
           path='/routines'
           element={
-            <Routines routines={routines}/>
+            <Routines routines={routines} workout={workout} handleSetWorkout={handleSetWorkout}/>
+          }
+        />
+        <Route 
+          path='/workout/:id'
+          element={
+            <WorkoutDetails workout={workout} />
           }
         />
       </Routes>
