@@ -8,6 +8,7 @@ const Routines = ({routines}) => {
       </div>
       <div>
         {
+          routines &&
           Object.keys(routines).map((key, i) => {
             return(
               <div key={i}>

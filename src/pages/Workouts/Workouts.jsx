@@ -6,7 +6,6 @@ const Workouts = ({ workouts, exercise, handleSetExercise }) => {
       <div className="sticky top-0 z-30 text-center text-2xl bg-gray-900/90 backdrop-blur-md shadow-md h-full " >
         <h1 className='p-3'>Workouts</h1>
       </div>
-      {/* <h1 className="text-center m-5 text-2xl">Workouts</h1> */}
       {
         workouts &&
         Object.keys(workouts).map((key, i) => {
