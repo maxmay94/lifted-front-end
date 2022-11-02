@@ -11,6 +11,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import Exercises from './pages/Exercises/Exercises'
 import ExerciseDetails from './pages/ExerciseDetails/ExerciseDetails'
 import Workouts from './pages/Workouts/Workouts'
+import Routines from './pages/Routines/Routines'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -20,6 +21,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import * as authService from './services/authService'
 import * as exerciseService from './services/exerciseService'
 import * as workoutService from './services/workoutService'
+import * as routineService from './services/routineService'
 
 // styles
 import './App.css'
@@ -102,6 +104,12 @@ const App = () => {
           path='/exercise/:id'
           element={
             <ExerciseDetails exercise={exercise} />
+          }
+        />
+        <Route 
+          path='/routines'
+          element={
+            <Routines />
           }
         />
       </Routes>
