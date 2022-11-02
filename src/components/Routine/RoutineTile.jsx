@@ -14,7 +14,9 @@ const RoutineTile = ({ routine, workout, handleSetWorkout }) => {
               <div className="col-span-1">Day {i+1}</div>
 
               <Link to={`/workout/${workout._id}`} className='col-span-3  text-amber-500'>
-                <div>{workout.name}</div>
+                <button onClick={() => handleSetWorkout(workout._id)}>
+                  <div>{workout.name}</div>
+                </button>
               </Link>
               
             </div>
