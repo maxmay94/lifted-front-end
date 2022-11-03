@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import * as exerciseService from '../../services/exerciseService'
 import ExerciseTile from '../../components/Exercise/ExerciseTile'
 
-const Exercises = ({handleSetExercise}) => {
+const Exercises = ({user, handleSetExercise}) => {
   const [exercises, setExercises] = useState([])
   const [muscles, setMuscles] = useState([])
   const [muscleSelected, setMuscleSelected] = useState("all")
@@ -59,12 +59,12 @@ const Exercises = ({handleSetExercise}) => {
               {
                 muscleSelected === "all" ?
                 <div className='w-3/4 mx-auto'>
-                  <ExerciseTile exercise={exercise} handleSetExercise={handleSetExercise}/>
+                  <ExerciseTile user={user} exercise={exercise} handleSetExercise={handleSetExercise}/>
                 </div>
                 :
                 exercise.muscle.includes(muscleSelected) &&
                 <div className='w-3/4 mx-auto'>
-                  <ExerciseTile exercise={exercise} handleSetExercise={handleSetExercise}/>
+                  <ExerciseTile user={user} exercise={exercise} handleSetExercise={handleSetExercise}/>
                 </div>
               }
             <br />

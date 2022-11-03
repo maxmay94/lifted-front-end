@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const ExerciseTile = ({exercise, handleSetExercise}) => {
+const ExerciseTile = ({user, exercise, handleSetExercise}) => {
   return (
     <div className="text-center m-2 p-1 bg-gradient-to-b from-gray-800 to-slate-700 rounded-xl h-full pt-2 drop-shadow-md">
       <Link to={`/exercise/${exercise._id}`} className="h-full w-full">
@@ -18,6 +18,16 @@ const ExerciseTile = ({exercise, handleSetExercise}) => {
           </div>
         </button>
       </Link>
+
+      <br />
+      {
+        user &&
+        <div className='flex'>
+          <div className='flex-1'></div>
+          <button className='bg-slate-900 rounded-xl p-1 w-8 text-amber-500 mr-3'>+</button>
+        </div>
+      }
+
     </div>
   )
 }

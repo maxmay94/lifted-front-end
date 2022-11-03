@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 const WorkoutTile = ({workout, exercise, handleSetExercise}) => {
+  
   return (
     <div>
       <h1 className="underline font-semibold">{workout.name}</h1>
@@ -26,6 +27,7 @@ const WorkoutTile = ({workout, exercise, handleSetExercise}) => {
             </div>
           ))
         }
+
       </div>
     </div>
   )

@@ -1,6 +1,6 @@
 import RoutineTile from '../../components/Routine/RoutineTile'
 
-const Routines = ({routines, workout, handleSetWorkout, handleSetExercise}) => {
+const Routines = ({routines, workout,exercise, handleSetWorkout, handleSetExercise}) => {
   return (
     <div>
       <div className="sticky top-0 z-30 text-center text-2xl bg-gray-900/90 backdrop-blur-md shadow-md h-full" >
@@ -12,7 +12,7 @@ const Routines = ({routines, workout, handleSetWorkout, handleSetExercise}) => {
           Object.keys(routines).map((key, i) => {
             return(
               <div key={i}>
-                <RoutineTile routine={routines[key]} workout={workout} handleSetExercise={handleSetExercise} handleSetWorkout={handleSetWorkout}/>
+                <RoutineTile routine={routines[key]} workout={workout} exercise={exercise} handleSetExercise={handleSetExercise} handleSetWorkout={handleSetWorkout}/>
               </div>
             )
           })

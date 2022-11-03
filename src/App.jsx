@@ -101,7 +101,7 @@ const App = () => {
         <Route 
           path='/exercises'
           element={
-            <Exercises handleSetExercise={handleSetExercise} />
+            <Exercises user={user} handleSetExercise={handleSetExercise} />
           }
         />
         <Route 
@@ -119,13 +119,13 @@ const App = () => {
         <Route 
           path='/routines'
           element={
-            <Routines routines={routines} workout={workout} handleSetExercise={handleSetExercise} handleSetWorkout={handleSetWorkout}/>
+            <Routines routines={routines} workout={workout} exercise={exercise} handleSetExercise={handleSetExercise} handleSetWorkout={handleSetWorkout}/>
           }
         />
         <Route 
           path='/workout/:id'
           element={
-            <WorkoutDetails workout={workout} />
+            <WorkoutDetails workout={workout} exercise={exercise} handleSetExercise={handleSetExercise} />
           }
         />
       </Routes>
