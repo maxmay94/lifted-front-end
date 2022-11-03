@@ -47,7 +47,6 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  
   const handleSetExercise = async(exerciseId) => {
     const currentExercise = await exerciseService.showExercise(exerciseId)
     setExercise(currentExercise)
