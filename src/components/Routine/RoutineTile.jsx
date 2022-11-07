@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const RoutineTile = ({ routine, workout, handleSetWorkout }) => {
   return (
-    <div className="text-center m-5 p-2 bg-gradient-to-b from-gray-800 to-slate-700 rounded-xl h-full pt-2 drop-shadow-md">
+    <div className="text-center m-5 p-2 bg-gradient-to-b from-gray-800 to-slate-700 hover:from-slate-700 hover:to-gray-800 rounded-xl h-full pt-2 drop-shadow-md">
       <h1 className="text-xl underline"> {routine.name} </h1>
       <p className="text-xs m-5">{routine.description}</p>
       <div className="divide-y divide-slate-800 px-2 pb-2">

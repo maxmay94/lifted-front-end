@@ -10,7 +10,7 @@ const Workouts = ({user, workouts, exercise, handleSetExercise }) => {
         workouts &&
         Object.keys(workouts).map((key, i) => {
           return (
-            <div key={i} className="text-center m-5 p-2 bg-gradient-to-b from-gray-800 to-slate-700 rounded-xl text-slate-200">
+            <div key={i} className="text-center m-5 p-2 bg-gradient-to-b from-gray-800 to-slate-700 hover:from-slate-700 hover:to-gray-800 rounded-xl text-slate-200">
               <WorkoutTile user={user} workout={workouts[key]} exercise={exercise} handleSetExercise={handleSetExercise}/>
             </div>
           )
