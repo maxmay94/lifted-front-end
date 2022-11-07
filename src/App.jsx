@@ -14,6 +14,7 @@ import Workouts from './pages/Workouts/Workouts'
 import Routines from './pages/Routines/Routines'
 import WorkoutDetails from './pages/WorkoutDetails/WorkoutDetails'
 import CreateWorkout from './pages/AddExerciseToWorkout/AddExerciseToWorkout'
+import EditWorkout from './pages/EditWorkout/EditWorkout'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -133,6 +134,14 @@ const App = () => {
           element={
             <ProtectedRoute user={user}>
               <CreateWorkout exercise={exercise} workouts={workouts} />
+            </ProtectedRoute>
+          }
+        />
+        <Route 
+          path='/workout/edit/:id'
+          element={
+            <ProtectedRoute user={user}>
+              <EditWorkout exercise={exercise} workouts={workouts} />
             </ProtectedRoute>
           }
         />
