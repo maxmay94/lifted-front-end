@@ -24,7 +24,13 @@ const ExerciseTile = ({user, exercise, handleSetExercise}) => {
         user &&
         <div className='flex'>
           <div className='flex-1'></div>
-          <button className='bg-slate-900 rounded-xl p-1 w-8 text-amber-500 mr-3'>+</button>
+          <Link to='/workout/edit'>
+            <button 
+              onClick={() => handleSetExercise(exercise._id)} 
+              className='bg-slate-900 rounded-xl p-1 w-8 text-amber-500 mr-3'>
+                +
+            </button>
+          </Link>
         </div>
       }
 

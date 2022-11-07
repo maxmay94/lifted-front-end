@@ -132,7 +132,7 @@ const App = () => {
           path='/workout/edit'
           element={
             <ProtectedRoute user={user}>
-              <CreateWorkout />
+              <CreateWorkout exercise={exercise} workouts={workouts} />
             </ProtectedRoute>
           }
         />

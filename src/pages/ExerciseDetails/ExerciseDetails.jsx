@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 const ExerciseDetails = ({user, exercise}) => {
   return (
@@ -13,7 +14,9 @@ const ExerciseDetails = ({user, exercise}) => {
           user &&
           <div className='flex p-2'>
             <div className='flex-1'></div>
-            <button className='bg-slate-900 rounded-xl p-1 w-8 text-amber-500 mr-3'>+</button>
+            <Link to='/workout/edit'>
+              <button className='bg-slate-900 rounded-xl p-1 w-8 text-amber-500 mr-3'>+</button>
+            </Link>
           </div>
         }
       </div>
