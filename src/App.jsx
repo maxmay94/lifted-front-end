@@ -13,7 +13,7 @@ import ExerciseDetails from './pages/ExerciseDetails/ExerciseDetails'
 import Workouts from './pages/Workouts/Workouts'
 import Routines from './pages/Routines/Routines'
 import WorkoutDetails from './pages/WorkoutDetails/WorkoutDetails'
-import CreateWorkout from './pages/CreateWorkout/CreateWorkout'
+import CreateWorkout from './pages/AddExerciseToWorkout/AddExerciseToWorkout'
 
 // components
 import NavBar from './components/NavBar/NavBar'
