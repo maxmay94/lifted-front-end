@@ -13,6 +13,7 @@ import ExerciseDetails from './pages/ExerciseDetails/ExerciseDetails'
 import Workouts from './pages/Workouts/Workouts'
 import Routines from './pages/Routines/Routines'
 import WorkoutDetails from './pages/WorkoutDetails/WorkoutDetails'
+import CreateWorkout from './pages/CreateWorkout/CreateWorkout'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -112,7 +113,7 @@ const App = () => {
         <Route 
           path='/exercise/:id'
           element={
-            <ExerciseDetails exercise={exercise} />
+            <ExerciseDetails exercise={exercise} user={user} />
           }
         />
         <Route 
@@ -125,6 +126,14 @@ const App = () => {
           path='/workout/:id'
           element={
             <WorkoutDetails workout={workout} exercise={exercise} handleSetExercise={handleSetExercise} />
+          }
+        />
+        <Route 
+          path='/workout/edit'
+          element={
+            <ProtectedRoute user={user}>
+              <CreateWorkout />
+            </ProtectedRoute>
           }
         />
       </Routes>

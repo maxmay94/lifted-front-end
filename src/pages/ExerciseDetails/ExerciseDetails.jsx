@@ -1,5 +1,5 @@
 
-const ExerciseDetails = ({exercise}) => {
+const ExerciseDetails = ({user, exercise}) => {
   return (
     <div>
       <div className="sticky top-0 z-30 text-center text-2xl bg-gray-900/90 backdrop-blur-md shadow-md h-full" >
@@ -9,7 +9,15 @@ const ExerciseDetails = ({exercise}) => {
         <h1 className="text-center text-2xl p-3">{exercise.name}</h1>
         <img src={exercise.url} className='w-1/2 mx-auto' alt={`animated GIF of ${exercise.name} form`} />
         <div className="px-10 py-5 text-justify text-sm">{exercise.description}</div>
+        {
+          user &&
+          <div className='flex p-2'>
+            <div className='flex-1'></div>
+            <button className='bg-slate-900 rounded-xl p-1 w-8 text-amber-500 mr-3'>+</button>
+          </div>
+        }
       </div>
+
     </div>
   )
 }
