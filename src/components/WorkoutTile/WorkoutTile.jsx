@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const WorkoutTile = ({workout, exercise, handleSetExercise}) => {
+const WorkoutTile = ({user, workout, exercise, handleSetExercise}) => {
   
   return (
     <div>
@@ -26,6 +26,28 @@ const WorkoutTile = ({workout, exercise, handleSetExercise}) => {
 
             </div>
           ))
+        }
+        {
+          user &&
+          <div className='flex p-1 m-1 text-xs'>
+            <div className='flex-1'>              
+              <Link to=''>
+                <button 
+                  // onClick={() => handleSetExercise(exercise._id)} 
+                  className=' bg-slate-900 rounded-xl p-2 text-amber-500'>
+                    Edit Workout
+                </button>
+              </Link></div>
+            <div className='flex-1'>
+              <Link to=''>
+                <button 
+                  // onClick={() => handleSetExercise(exercise._id)} 
+                  className=' bg-slate-900 rounded-xl p-2 text-amber-500'>
+                    Add to Routine
+                </button>
+              </Link>
+            </div>
+          </div>
         }
 
       </div>
