@@ -50,6 +50,7 @@ const App = () => {
   }
 
   const handleSetExercise = async(exerciseId) => {
+    setExercise('loading')
     const currentExercise = await exerciseService.showExercise(exerciseId)
     setExercise(currentExercise)
   }

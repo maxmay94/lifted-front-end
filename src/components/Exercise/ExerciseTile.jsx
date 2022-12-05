@@ -8,7 +8,7 @@ const ExerciseTile = ({user, exercise, handleSetExercise}) => {
           <div className=" pt-1 px-2">
             <img className="h-1/4 max-h-32 mx-auto rounded-xl" 
               src={
-                exercise.url ? 
+                exercise.url? 
                   exercise.url 
                   : 'https://media2.giphy.com/media/xUPGcKoAYCn5fHK0Zq/giphy.gif?cid=790b76119890b6d87289ae179baa7187685153fcd10ed682&rid=giphy.gif&ct=g'
               } 
