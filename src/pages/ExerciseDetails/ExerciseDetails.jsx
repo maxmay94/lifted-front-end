@@ -15,7 +15,7 @@ const ExerciseDetails = ({user, exercise}) => {
           <div className='flex p-2'>
             <div className='flex-1'></div>
             <Link to='/workout/edit'>
-              <button className='bg-slate-900 rounded-xl p-1 w-8 text-amber-500 mr-3'>+</button>
+              <button className='bg-slate-900 rounded-xl p-2 text-sm text-amber-500 mr-3'>Add to Workout</button>
             </Link>
           </div>
         }

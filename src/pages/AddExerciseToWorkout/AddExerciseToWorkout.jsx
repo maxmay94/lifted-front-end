@@ -20,7 +20,7 @@ const AddExerciseToWorkout = ({exercise, workouts}) => {
             <div key={i} className="text-center m-5 p-2 bg-gradient-to-b from-gray-800 to-slate-700 hover:from-slate-700 hover:to-gray-800 rounded-xl text-slate-200">
               <button className="w-full">
                 <div className="text-sm text-amber-500 p-1">Add {exercise.name} To</div>
-                <div className="text-red-500 font-bold p-1">
+                <div className="animate-pulse text-red-500 font-bold p-1">
                   {workouts[key].name}
                 </div>
               </button>

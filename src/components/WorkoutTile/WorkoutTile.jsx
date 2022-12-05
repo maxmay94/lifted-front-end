@@ -7,6 +7,7 @@ const WorkoutTile = ({user, workout, exercise, handleSetExercise}) => {
       <h1 className="underline font-semibold">{workout.name}</h1>
       <p className="m-5 text-xs text-center">{workout.description}</p>
       <div className="divide-y divide-slate-800">
+        
         {
           workout.exercises &&
           workout.exercises.map((exercise, j) => (
@@ -27,10 +28,11 @@ const WorkoutTile = ({user, workout, exercise, handleSetExercise}) => {
             </div>
           ))
         }
+
         {
           user &&
           <div className='flex p-1 m-1 text-xs'>
-            <div className='flex-1'>              
+            <div className='flex-1 mt-2'>              
               <Link to=''>
                 <button 
                   // onClick={() => handleSetExercise(exercise._id)} 
@@ -38,7 +40,7 @@ const WorkoutTile = ({user, workout, exercise, handleSetExercise}) => {
                     Edit Workout
                 </button>
               </Link></div>
-            <div className='flex-1'>
+            <div className='flex-1 mt-2'>
               <Link to=''>
                 <button 
                   // onClick={() => handleSetExercise(exercise._id)} 
