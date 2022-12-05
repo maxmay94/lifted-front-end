@@ -56,6 +56,7 @@ const App = () => {
   }
 
   const handleSetWorkout = async(workoutId) => {
+    setWorkout('loading')
     const currentWorkout = await workoutService.showWorkout(workoutId)
     setWorkout(currentWorkout)
   }

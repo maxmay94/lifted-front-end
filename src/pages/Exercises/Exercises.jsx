@@ -70,6 +70,7 @@ const Exercises = ({user, handleSetExercise}) => {
             <br />
             </div>
           ))
+
         }
         <br />
         <br />
