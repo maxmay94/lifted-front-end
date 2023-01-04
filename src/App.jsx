@@ -33,6 +33,8 @@ import { useEffect } from 'react'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const [exercise, setExercise] = useState({})
+  const [exercises, setExercises] = useState([])
+  const [muscles, setMuscles] = useState([])
   const [workouts, setWorkouts] = useState({})
   const [workout, setWorkout] = useState({})
   const [routines, setRoutines] = useState({})
@@ -70,6 +72,21 @@ const App = () => {
       setRoutines(routineData)
     }
     fetchWorkoutsAndRoutines()
+  }, [])
+
+  useEffect(() => {
+    const fetchExercises = async() => {
+      const exerciseData = await exerciseService.getAllExercises()
+      let muscleSet = new Set()
+      exerciseData.forEach(exercise => {
+        exercise.muscle.forEach(muscle => {
+          if(!muscleSet.has(muscle))muscleSet.add(muscle)
+        })
+      })
+      setMuscles([...new Set(muscleSet)])
+      setExercises(exerciseData)
+    }
+    fetchExercises()
   }, [])
 
 
@@ -144,7 +161,7 @@ const App = () => {
           path='/workout/edit/:id'
           element={
             <ProtectedRoute user={user}>
-              <EditWorkout workout={workout} />
+              <EditWorkout workout={workout} exercises={exercises} />
             </ProtectedRoute>
           }
         />
