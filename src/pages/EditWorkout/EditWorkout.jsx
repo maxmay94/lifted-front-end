@@ -9,8 +9,8 @@ const EditWorkout = ({ workout, exercises }) => {
       {
           workout.exercises &&
           workout.exercises.map((exercise, j) => (
-            <div key={j} className="text-center mx-3 grid grid-cols-2 py-2 text-sm divide-x divide-slate-800 divide-dashed">
-              <select name="" id="" className="bg-slate-900 p-2 rounded">
+            <div key={j} className="text-center grid grid-cols-6 py-2 text-sm divide-x divide-slate-800 divide-dashed">
+              <select name="" id="" className="bg-slate-900 p-2 rounded col-span-2">
                 <option value="all" defaultValue={true}>{exercise.name}</option>
                 {
                   exercises.map((ex, i) => (
@@ -20,13 +20,11 @@ const EditWorkout = ({ workout, exercises }) => {
                   ))
                 }
               </select>
-
-              {/* <div className=" text-amber-500">
-                {exercise.name}
-              </div> */}
-
-              <div className="bg-gray-900 rounded p-2">
+              <div className="bg-gray-900 rounded p-2 col-span-3" contentEditable="true" >
                 {workout.setsReps[j]}
+              </div>
+              <div>
+                <button className="bg-slate-900 p-2 rounded">delete</button>
               </div>
             </div>
           ))
