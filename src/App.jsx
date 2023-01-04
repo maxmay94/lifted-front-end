@@ -39,7 +39,6 @@ const App = () => {
   const navigate = useNavigate()
 
   const handleLogout = () => {
-    console.log("LOGGING OUT")
     authService.logout()
     setUser(null)
     navigate('/')
