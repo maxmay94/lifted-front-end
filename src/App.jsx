@@ -52,12 +52,14 @@ const App = () => {
     setExercise('loading')
     const currentExercise = await exerciseService.showExercise(exerciseId)
     setExercise(currentExercise)
+    console.log(exercise)
   }
 
   const handleSetWorkout = async(workoutId) => {
     setWorkout('loading')
     const currentWorkout = await workoutService.showWorkout(workoutId)
     setWorkout(currentWorkout)
+    console.log(workout)
   }
   
   useEffect(() => {
@@ -109,7 +111,7 @@ const App = () => {
         <Route 
           path='/workouts'
           element={
-            <Workouts user={user} workouts={workouts} exercise={exercise} handleSetExercise={handleSetExercise} />
+            <Workouts user={user} workouts={workouts} exercise={exercise} handleSetExercise={handleSetExercise} handleSetWorkout={handleSetWorkout} />
           }
         />
         <Route 
@@ -142,7 +144,7 @@ const App = () => {
           path='/workout/edit/:id'
           element={
             <ProtectedRoute user={user}>
-              <EditWorkout exercise={exercise} workouts={workouts} />
+              <EditWorkout workout={workout} />
             </ProtectedRoute>
           }
         />

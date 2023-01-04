@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const WorkoutTile = ({user, workout, exercise, handleSetExercise}) => {
+const WorkoutTile = ({user, workout, exercise, handleSetExercise, handleSetWorkout}) => {
   
   return (
     <div>
@@ -20,11 +20,9 @@ const WorkoutTile = ({user, workout, exercise, handleSetExercise}) => {
                   </div>
                 </button>
               </Link>
-
               <div className="">
                 {workout.setsReps[j]}
               </div>
-
             </div>
           ))
         }
@@ -33,9 +31,9 @@ const WorkoutTile = ({user, workout, exercise, handleSetExercise}) => {
           user &&
           <div className='flex p-1 m-1 text-xs'>
             <div className='flex-1 mt-2'>              
-              <Link to=''>
+              <Link to={`/workout/edit/${workout._id}`}>
                 <button 
-                  // onClick={() => handleSetExercise(exercise._id)} 
+                  onClick={() => handleSetWorkout(workout._id)} 
                   className=' bg-slate-900 rounded-xl p-2 text-amber-500'>
                     Edit Workout
                 </button>
@@ -43,7 +41,7 @@ const WorkoutTile = ({user, workout, exercise, handleSetExercise}) => {
             <div className='flex-1 mt-2'>
               <Link to=''>
                 <button 
-                  // onClick={() => handleSetExercise(exercise._id)} 
+                  onClick={() => handleSetWorkout(workout._id)} 
                   className=' bg-slate-900 rounded-xl p-2 text-amber-500'>
                     Add to Routine
                 </button>
